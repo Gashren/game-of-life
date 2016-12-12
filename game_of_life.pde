@@ -11,11 +11,7 @@ void setup() {
     for (int j = 0; j < rows; j++) {
       cells[i][j] = new Cell(i * scl, j * scl, scl, false); 
     }
-  }
-  cells[10][9].alive = true;
-  cells[10][10].alive = true;
-  cells[10][11].alive = true;
-      
+  }   
 }
 
 void mousePressed() {
@@ -37,7 +33,7 @@ void keyPressed() {
 void draw() {
   background(0);
   stroke(255, 75);
-  frameRate(20);
+  frameRate(10);
   
   for (int i = 0; i < cols; i++) {
     line(i * scl, 0, i * scl, height);
@@ -55,8 +51,7 @@ void draw() {
   
   if (play) {
     step(); 
-  }
-  
+  } 
 }
 
 void step() {
