@@ -22,10 +22,6 @@ class Cell {
         }
       }
     }
-    
-    if (aliveNearby != 0) {
-      println(aliveNearby);
-    }
   }
   
   void update() {
