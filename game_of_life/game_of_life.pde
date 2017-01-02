@@ -1,6 +1,6 @@
 int scl = 10;
 int playSpeed = 5;
-int rows, cols;
+int rows, cols, step;
 boolean play;
 
 Cell[][] cells;
@@ -10,6 +10,7 @@ void setup() {
   cols = width / scl;
   rows = height / scl;
   cells = new Cell[cols][rows];
+  step = 0;
   
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
@@ -56,6 +57,12 @@ void draw() {
       cells[i][j].show();
     }
   }
+   
+  fill(255,0,0);
+  stroke(0);
+  text("Step: " + step, 20, 20);
+  text("Speed: " + playSpeed, 20, 40);
+  text("Playing: " + play, 20, 60);
   
   if (play) {
     step(); 
@@ -63,6 +70,7 @@ void draw() {
 }
 
 void step() {
+  step++;
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
       cells[i][j].checkAlive(cells); 
